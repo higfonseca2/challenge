@@ -17,6 +17,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class APIController extends Controller
 {
     /**
+     * Get People data
+     *
+     * @param $token
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *
      * @Route("/api/{token}/people", name="app_api_people")
      */
     public function people($token)
@@ -45,6 +50,11 @@ class APIController extends Controller
 
 
     /**
+     * Get shiporder data
+     *
+     * @param $token
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     *
      * @Route("/api/{token}/shiporders", name="app_api_shiporders")
      */
     public function shiporders($token)

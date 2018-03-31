@@ -25,6 +25,10 @@ use App\Entity\ShipordersItems;
 class XmlController extends Controller
 {
     /**
+     * Simply render view
+     *
+     * @return Response
+     *
      * @Route("/")
      */
     public function index()
@@ -34,6 +38,11 @@ class XmlController extends Controller
 
 
     /**
+     * Handle file upload
+     *
+     * @param SessionInterface $session
+     * @return Response
+     *
      * @Route("/xml/upload")
      */
     public function upload(SessionInterface $session)
@@ -72,6 +81,11 @@ class XmlController extends Controller
 
 
     /**
+     * Show API URL
+     *
+     * @param SessionInterface $session
+     * @return Response
+     *
      * @Route("/xml/view")
      */
     public function view(SessionInterface $session)
@@ -101,13 +115,25 @@ class XmlController extends Controller
     }
 
 
-
+    /**
+     * Create random token for API authentication
+     *
+     * @param int $length
+     * @return string
+     */
     private function generateRandomToken($length = 20)
     {
         return $token = bin2hex(openssl_random_pseudo_bytes($length));
     }
 
 
+    /**
+     * Save file upload with auth token
+     *
+     * @param $token
+     * @param $type
+     * @return int
+     */
     private function saveUpload($token, $type)
     {
         $upload = new Upload();
@@ -122,6 +148,12 @@ class XmlController extends Controller
     }
 
 
+    /**
+     * Handle people.xml
+     *
+     * @param $person
+     * @param $uploadId
+     */
     private function handleXMLperson($person, $uploadId)
     {
         $xml = json_decode($person, true);
@@ -163,6 +195,12 @@ class XmlController extends Controller
     }
 
 
+    /**
+     * Handle shiporder XML
+     *
+     * @param $shiporder
+     * @param $uploadId
+     */
     private function handleXMLshiporder($shiporder, $uploadId)
     {
         $xml = json_decode($shiporder, true);
