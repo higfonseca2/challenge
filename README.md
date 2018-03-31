@@ -29,3 +29,6 @@ This project was developed using Symfony 4 Framework, Materialize CSS and jQuery
 * After uploading, if desired, click on Process to save file contents to database 
 * Access the API with the authentication token through the shown URL, after processing the file
 ```
+
+### API Documentation
+API documentation can be found at https://s2challenge.readme.io/v1.0/docs/api
