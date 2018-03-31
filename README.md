@@ -61,6 +61,6 @@ After uploading and processing "People.xml", access the API through:
 ### Shiporders API
 After uploading and processing "Shiporders.xml", access the API through:
 ```
-* "/api/shiporders/{auth_token}/{orderid}" to get specific person data
+* "/api/shiporders/{auth_token}/{orderid}" to get specific order data
 * "/api/shiporders/{auth_token}/all" to get data from all shiporders
 ```
