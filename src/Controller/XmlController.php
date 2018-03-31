@@ -72,6 +72,11 @@ class XmlController extends Controller
                 $shiporder = json_encode($xml);
                 $this-> handleXMLshiporder($shiporder, $uploadId);
             }
+
+
+            if(!isset($xml-> person) && !isset($xml-> shiporder)) {
+                throw new \Exception('Invalid XML format');
+            }
         }
 
         $session-> set("type", $type);
@@ -99,19 +104,23 @@ class XmlController extends Controller
         {
             case 1:
                 $api = "people";
+                $specific = "{personid}";
                 break;
 
             case 2:
                 $api = "shiporders";
+                $specific = "{orderid}";
                 break;
         }
 
-        $url = $url . "/api/" . $token . "/" . $api;
+        $url = $url . "/api/" . $api . "/" . $token;
 
         return $this-> render('xml/upload.html.twig', array(
             "token" => $token,
-            "apiUrl" => $url,
-            "apiPath" => "/api/" . $token . "/" . $api
+            "apiUrl" => $url . "/all",
+            "api2url" => $url . "/" . $specific,
+            "apiPath" => "/api/" . $api . "/" . $token . "/all",
+            "api2path" => "/api/" . $api . "/" . $token . "/" . $specific
         ));
     }
 

@@ -16,15 +16,22 @@
 
             <div class="row center grey lighten-3">
                 <p>Authentication Token:</p>
-                <p>{{ token }}</p>
+                <p><b>{{ token }}</b></p>
 
                 <br>
-                <p>To get the results via API, access this URL:</p>
-                <p><b>{{ apiUrl }}</b></p>
+                <p>To get ALL results via API, access this URL:</p>
+                <p>{{ apiUrl }}</p>
 
                 <br>
-                <p>Or add the following after your website URL: </p>
-                <p>{{ apiPath }}</p>
+                <p>To get a specific result via API, access the URL:</p>
+                <p>{{ api2url }}</p>
+
+                <br>
+                <p>Or add the following after your URL: </p>
+                <p>
+                    {{ apiPath }}<br>
+                    {{ api2path }}
+                </p>
             </div>
 
         </div>
