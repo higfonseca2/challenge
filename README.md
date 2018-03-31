@@ -2,7 +2,7 @@
 Application to manually upload given XMLs with an option to process them and make the information available via rest APIs.
 
 ## Built with
-This project was developed using Symfony 4 Framework, Materialize CSS and jQuery.
+This project was developed using Symfony 4 Framework, Materialize CSS, jQuery and DropzoneJS.
 
 ### Prerequisites
 ```
@@ -30,5 +30,37 @@ This project was developed using Symfony 4 Framework, Materialize CSS and jQuery
 * Access the API with the authentication token through the shown URL, after processing the file
 ```
 
-### API Documentation
-API documentation can be found at https://s2challenge.readme.io/v1.0/docs/api
+
+
+# API Documentation
+Retrieve uploaded XML file content
+
+## Authorization Token
+```
+Auth token will be provided after processing XML file, and must be sent with the endpoint request.
+```
+
+## Method
+```
+All API's are available through GET method.
+```
+
+## Response Headers
+```
+Responses will be sent with application/json headers
+```
+
+
+### People API
+After uploading and processing "People.xml", access the API through: 
+```
+* "/api/people/{auth_token}/{personid}" to get specific person data
+* "/api/people/{auth_token}/all" to get data from all people
+```
+
+### Shiporders API
+After uploading and processing "Shiporders.xml", access the API through:
+```
+* "/api/shiporders/{auth_token}/{orderid}" to get specific person data
+* "/api/shiporders/{auth_token}/all" to get data from all shiporders
+```
