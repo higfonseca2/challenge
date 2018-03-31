@@ -42,7 +42,7 @@ Auth token will be provided after processing XML file, and must be sent with the
 
 ## Method
 ```
-All API's are available through GET methods.
+All API's are available through GET method.
 ```
 
 ## Response Headers
