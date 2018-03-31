@@ -49,6 +49,8 @@ class XmlController extends Controller
 
             if(isset($xml-> person)) {
                 $uploadId = $this-> saveUpload($uploadToken, 1);
+                $type = 1;
+
                 $person = json_encode($xml);
                 $this-> handleXMLperson($person, $uploadId);
             }
@@ -56,11 +58,14 @@ class XmlController extends Controller
 
             if(isset($xml-> shiporder)) {
                 $uploadId = $this-> saveUpload($uploadToken, 2);
+                $type = 2;
+
                 $shiporder = json_encode($xml);
                 $this-> handleXMLshiporder($shiporder, $uploadId);
             }
         }
 
+        $session-> set("type", $type);
         $session-> set("token", $uploadToken);
         return new Response("OK");
     }
@@ -71,10 +76,27 @@ class XmlController extends Controller
      */
     public function view(SessionInterface $session)
     {
-        $response = $session-> get("token");
+        $token = $session-> get("token");
+        $type = $session-> get("type");
+
+        $url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+
+        switch($type)
+        {
+            case 1:
+                $api = "people";
+                break;
+
+            case 2:
+                $api = "shiporders";
+                break;
+        }
+
+        $url = $url . "/api/" . $token . "/" . $api;
 
         return $this-> render('xml/upload.html.twig', array(
-            "token" => $response
+            "apiUrl" => $url,
+            "apiPath" => "/api/" . $token . "/" . $api
         ));
     }
 
