@@ -2,7 +2,7 @@
 Application to manually upload given XMLs with an option to process them and make the information available via rest APIs.
 
 ## Built with
-This project was developed using Symfony 4 Framework, Materialize CSS and jQuery.
+This project was developed using Symfony 4 Framework, Materialize CSS, jQuery and DropzoneJS.
 
 ### Prerequisites
 ```
