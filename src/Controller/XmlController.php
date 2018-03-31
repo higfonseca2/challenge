@@ -109,6 +109,7 @@ class XmlController extends Controller
         $url = $url . "/api/" . $token . "/" . $api;
 
         return $this-> render('xml/upload.html.twig', array(
+            "token" => $token,
             "apiUrl" => $url,
             "apiPath" => "/api/" . $token . "/" . $api
         ));
