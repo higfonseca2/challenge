@@ -54,13 +54,13 @@ Responses will be sent with application/json headers
 ### People API
 After uploading and processing "People.xml", access the API through: 
 ```
-* /api/people/*{auth_token}*/*{personid}* to get specific person data
-* /api/people/*{auth_token}*/all to get data from all people
+* "/api/people/{auth_token}/{personid}" to get specific person data
+* "/api/people/{auth_token}/all" to get data from all people
 ```
 
 ### Shiporders API
 After uploading and processing "Shiporders.xml", access the API through:
 ```
-* /api/shiporders/*{auth_token}*/*{orderid}* to get specific person data
-* /api/shiporders/*{auth_token}*/all to get data from all shiporders
+* "/api/shiporders/{auth_token}/{orderid}" to get specific person data
+* "/api/shiporders/{auth_token}/all" to get data from all shiporders
 ```
