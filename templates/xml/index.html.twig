@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="https://s2it.com.br/site/wp-content/themes/s2it/images/logoS2it.png">
+            </a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container center">
+            <br><br>
+            <h1 class="header center orange-text">Upload XML</h1>
+            <div class="row center grey lighten-3" id="uploadArea">
+
+
+                <form action="/xml/upload"
+                      class="dropzone"
+                      id="my-awesome-dropzone"></form>
+
+            </div>
+            <br><br>
+
+            <a class="waves-effect waves-light btn-large" style="visibility: hidden;" id="processBtn" href="/xml/view">
+                <i class="material-icons right">autorenew</i>Process
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+
+            </div>
+
+        </div>
+        <br><br>
+    </div>
+
+    <footer class="page-footer grey darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Instructions</h5>
+                    <p class="grey-text text-lighten-4">
+                        Drop the file into specified area and let the magic happen!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by Hígor Fonseca
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+{% block stylesheets %}
+{#<style type="text/css">
+    #uploadArea{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-style: dotted;
+    }
+</style>#}
+    <link rel="stylesheet" href="{{ asset('assets/css/dropzone.css') }}">
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/js/dropzone.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/upload.js') }}"></script>
+{% endblock %}
