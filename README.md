@@ -16,7 +16,7 @@ This project was developed using Symfony 4 Framework, Materialize CSS and jQuery
 ### Installation
 ```
 * Import /Migrations/script_changes.sql to desired MySQL database
-* Update .env file in your project root to match your database configs
+* Update .env file in your project root to match your database settings
 * Move /src/Controller and /src/Entity to your project Bundle
 * Move /public/assets folder to /public/assets in your project
 * Move /templates/xml folder to /templates/xml and overwrite base.html.twig (make a backup first!)
@@ -26,6 +26,6 @@ This project was developed using Symfony 4 Framework, Materialize CSS and jQuery
 ```
 * Start your server and navigate to root directory (/ - http://127.0.0.1:8000/)
 * Upload the XML file
-* After uploading, if desired, click on Process to upload file content to database 
+* After uploading, if desired, click on Process to save file contents to database 
 * Access the API with the authentication token through the shown URL, after processing the file
 ```
